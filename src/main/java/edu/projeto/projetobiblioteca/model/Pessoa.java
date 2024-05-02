@@ -10,6 +10,7 @@ public class Pessoa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nome;
+    @Column(unique = true)
     private String email;
     private String senha;
 
@@ -17,6 +18,22 @@ public class Pessoa {
     }
 
     public Pessoa(String nome, String email, String senha) {
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+    }
+
+    //Construtor para Cliente
+    public Pessoa(String nome, String cpf, String email, String senha){
+        super();
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+    }
+
+    //Construtor para ADM
+    public Pessoa(String nome, int matricula, String email, String senha){
+        super();
         this.nome = nome;
         this.email = email;
         this.senha = senha;

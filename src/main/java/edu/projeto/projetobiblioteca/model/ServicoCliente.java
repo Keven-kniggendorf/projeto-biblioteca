@@ -11,12 +11,12 @@ public class ServicoCliente {
    private PessoaRepository pessoaRepository;
 
 
-    public Cliente cadastrarCliente(Cliente cliente){
+    public Pessoa cadastrarCliente(Pessoa cliente){
         return pessoaRepository.save(cliente);
     }
 
 
-    public Administrador cadastrarAdm(Administrador adm){
+    public Pessoa cadastrarAdm(Pessoa adm){
         return pessoaRepository.save(adm);
     }
 }
