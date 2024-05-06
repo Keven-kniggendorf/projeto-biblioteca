@@ -1,5 +1,6 @@
-package edu.projeto.projetobiblioteca.model;
+package edu.projeto.projetobiblioteca.service;
 
+import edu.projeto.projetobiblioteca.model.Pessoa;
 import edu.projeto.projetobiblioteca.repositores.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
