@@ -3,6 +3,9 @@ package edu.projeto.projetobiblioteca.model;
 import jakarta.persistence.*;
 import org.hibernate.annotations.Columns;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Pessoa {
 
@@ -14,6 +17,12 @@ public class Pessoa {
     private String email;
     private String senha;
 
+    @Enumerated(EnumType.STRING)
+    private TipoPessoa tipoPessoa;
+
+    @OneToMany(mappedBy = "pessoaAlugando", cascade = CascadeType.ALL)
+    private List<Livro> livrosAlugados = new ArrayList<>();
+
     public Pessoa() {
     }
 
@@ -21,6 +30,7 @@ public class Pessoa {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
+        this.tipoPessoa = tipoPessoa;
     }
 
     //Construtor para Cliente
