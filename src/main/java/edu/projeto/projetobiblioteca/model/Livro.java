@@ -24,7 +24,7 @@ public class Livro {
     private Date dataDevolucao;
 
     @ManyToOne
-    private Pessoa pessoaAlugando;
+    private Cliente pessoaAlugando;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status") // Mapear para a coluna 'status' no banco de dados
@@ -91,7 +91,7 @@ public class Livro {
         return formatter.format(dataDevolucao);
     }
 
-    public Pessoa getPessoaAlugando() {
+    public Cliente getPessoaAlugando() {
         return pessoaAlugando;
     }
 
@@ -104,7 +104,7 @@ public class Livro {
         this.dataDevolucao = dataDevolucao;
     }
 
-    public void setPessoaAlugando(Pessoa pessoaAlugando) {
+    public void setPessoaAlugando(Cliente pessoaAlugando) {
         this.pessoaAlugando = pessoaAlugando;
     }
 
