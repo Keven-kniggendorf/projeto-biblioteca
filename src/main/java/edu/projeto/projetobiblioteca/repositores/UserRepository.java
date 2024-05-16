@@ -1,9 +1,10 @@
 package edu.projeto.projetobiblioteca.repositores;
 
-import edu.projeto.projetobiblioteca.model.Administrador;
+import edu.projeto.projetobiblioteca.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 
-public interface AdmRepository extends JpaRepository<Administrador, Integer> {
+public interface UserRepository extends JpaRepository<User, Integer> {
 
+  public  User findByEmail(String email);
 }

@@ -6,6 +6,7 @@ import edu.projeto.projetobiblioteca.repositores.LivroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -22,6 +23,10 @@ public class LivroService {
 
     public Optional<Livro> buscarLivro(int id) {
         return livroRepository.findById(id);
+    }
+
+    public List<Livro> buscarTodosLivros(Livro livro){
+        return livroRepository.findAll();
     }
 
     public Livro atualizarLivro(Livro livro) {
