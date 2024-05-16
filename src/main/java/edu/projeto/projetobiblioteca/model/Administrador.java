@@ -1,6 +1,13 @@
 package edu.projeto.projetobiblioteca.model;
 
+import edu.projeto.projetobiblioteca.userRole.UserRoles;
 import jakarta.persistence.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class Administrador {
@@ -14,6 +21,8 @@ public class Administrador {
     private String senha;
     @Column(unique = true)
     private int matricula;
+    private UserRoles roles;
+
 
 public Administrador() {
     }
